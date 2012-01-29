@@ -65,13 +65,17 @@ According to the [official spec](https://github.com/amdjs/amdjs-api/wiki/AMD):
 > 
 > It is an improvement over the web's current "globals and script tags" 
 > because:
+>
 > * Uses the [CommonJS](http://groups.google.com/group/commonjs) practice of 
 >   string IDs for dependencies. Clear declaration of dependencies and avoids 
 >   the use of globals.
+>
 > * IDs can be mapped to different paths. This allows swapping out 
 >   implementation. This is great for creating mocks for unit testing. 
+>
 > * Encapsulates the module definition. Gives you the tools to avoid polluting 
 >   the global namespace.
+>
 > * Clear path to defining the module value. Either use "return value;" or the 
 >   CommonJS "exports" idiom, which can be useful for circular dependencies.
 
