@@ -88,7 +88,7 @@ According to the [official spec](https://github.com/amdjs/amdjs-api/wiki/AMD):
 
 #### Hello World
 
-```javascript
+```html
 <!doctype html>
 <html>
     <body>
