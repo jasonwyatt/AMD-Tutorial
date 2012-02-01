@@ -1,6 +1,8 @@
 # How and Why AMD is Right for Me (and Probably For You Too)
 
-Even though it's considered to be the "lingua franca" of the web, JavaScript was not originally intended to support the type of rich web applications front-end developers have been tasked with engineering over the past few years.  Today, it is not uncommon to see web apps comprise many thousands of lines of code.  Trying to organize a codebase of that size within a single file is both nearly impossible and downright silly; if this was the only way of doing things I would've quit web development all together.
+Even though it's considered to be the "lingua franca" of the web, JavaScript was not originally intended to support the type of rich web applications front-end developers have been tasked with engineering over the past few years.  Today, it is not uncommon to see web apps comprise many thousands of lines of code.  Trying to organize a codebase of that size within a single file is both nearly impossible and downright silly; if this was the only way of doing things I would've quit web development all together.  
+
+During this tutorial, I will attempt to convince you that the Asynchronous Module Definition (**AMD**) pattern is a necessary and sufficient solution to the problems of dependency management on the web.
 
 ## Old and Busted
 
@@ -81,11 +83,37 @@ According to the [official spec](https://github.com/amdjs/amdjs-api/wiki/AMD):
 
 ### Getting Started With RequireJS and jQuery
 
-*TODO*
+ * Download RequireJS from http://www.requirejs.org
+ * Download jQuery from http://www.jquery.com
 
 #### Hello World
 
-*TODO*
+```javascript
+<!doctype html>
+<html>
+    <body>
+        <h1>Hello <span class="name"></span></h1>
+
+        <script type="text/javascript">
+            var require = {
+                paths: {
+                    'jquery': 'path/to/jquery' // leave off the .js
+                }
+            };
+        </script>
+        <script src="path/to/require.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            require(['jquery'], function($){
+                $(function(){
+                    var name = prompt("What is your name?");
+                    
+                    $('.name').text(name);
+                });
+            });
+        </script>
+    </body>
+</html>
+```
 
 #### Defining and Requiring Your Own Modules
 
